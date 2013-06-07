@@ -1,4 +1,4 @@
-#! /usr/bin/env ruby
+#! /usr/bin/env rackup
 
 require "rubygems"
 require "bundler/setup"
