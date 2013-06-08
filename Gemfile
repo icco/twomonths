@@ -43,7 +43,3 @@ group :test do
   gem 'simplecov', require: false
   gem 'timecop'
 end
-
-group :staging, :production do
-  gem 'newrelic_rpm'
-end

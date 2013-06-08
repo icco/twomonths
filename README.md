@@ -1,5 +1,6 @@
-You look great in Suspenders
-============================
+# Two Months
+
+An idea spawned from strip search.
 
 Use the following guides for getting things done, programming well, and
 programming in style.
