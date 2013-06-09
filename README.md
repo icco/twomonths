@@ -15,4 +15,4 @@ programming in style.
 
 ## Features
 
-...
+ * Notifications
