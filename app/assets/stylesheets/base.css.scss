@@ -1,0 +1,17 @@
+$body-font-size: 1em !default;
+$body-line-height: golden-ratio(1em, 1) !default;
+$body-font-family: $helvetica !default;
+
+body {
+  font: $body-font-size $body-font-family;
+  line-height: $body-line-height;
+}
+
+.application {
+  @include outer-container;
+}
+
+section {
+  aside { @include span-columns(3); }
+  article { @include span-columns(9); }
+}
