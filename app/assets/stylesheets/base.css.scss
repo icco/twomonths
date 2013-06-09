@@ -26,19 +26,24 @@ body {
 .application {
 }
 
+section {
+  margin: 40px -8px 0;
+  padding: 20px 0 30px;
+
+  .inner {
+    @include outer-container;
+  }
+}
+
 .chunk {
   background-color: $bg-color2;
   color: $light-text;
-  margin: 40px -8px 0;
-  padding: 20px 0 30px;
 
   a, a:visited {
     color: $grey-text;
   }
 
   .inner {
-    @include outer-container;
-
     p {
       @include shift(1);
     }
@@ -75,6 +80,19 @@ body {
     text-align: left;
     text-rendering: optimizelegibility;
   }
+}
+
+button, .button, input[type=submit] {
+  @include button(simple, $bg-color3);
+}
+
+.big {
+  @include span-columns(4);
+  @include shift(4);
+
+  font-size: 2em;
+  padding: 18px;
+  text-align: center;
 }
 
 .one_col {
