@@ -9,6 +9,7 @@ body {
 
 .application {
   @include outer-container;
+  font: 1em "Merriweather", serif;
 }
 
 .header {
@@ -17,18 +18,24 @@ body {
     background-repeat: no-repeat;
 
     .text {
-      margin-left: 100px;
-      font-weight: 700;
       font-size: 3em;
-      line-height: 2em;
-      vertical-align: baseline;
+      font-weight: 700;
       height: 100px;
+      line-height: 2.1em;
+      margin-left: 100px;
+      vertical-align: baseline;
     }
   }
 }
 
+.middle {
+  @include span-columns(9);
 
-section {
-  aside { @include span-columns(3); }
-  article { @include span-columns(9); }
+  color: #81888D;
+  font-size: 2em;
+  font-weight: 300;
+  line-height: 2em;
+  margin-left: 100px;
+  text-align: left;
+  text-rendering: optimizelegibility;
 }
