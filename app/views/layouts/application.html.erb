@@ -9,9 +9,12 @@
   </head>
   <body class="<%= body_class %>">
     <div class="header">
-      <div class="logo"><h1 class="text">Two Month Me!</h1></div>
-
+      <div class="logo">
+        <div class="one_col"><img src="/img/clock.svg" /></div>
+        <h1 class="text">Two Month Me!</h1>
+      </div>
     </div>
+
     <%= render 'flashes' -%>
 
     <%= yield %>

@@ -5,37 +5,58 @@ $body-font-family: $helvetica !default;
 body {
   font: $body-font-size $body-font-family;
   line-height: $body-line-height;
+  color: #231f20;
 }
 
 .application {
-  @include outer-container;
   font: 1em "Merriweather", serif;
 }
 
-.header {
-  .logo {
-    background: url('/img/clock.svg');
-    background-repeat: no-repeat;
+.chunk {
+  background-color: #865f81;
+  color: #fffefe;
+  margin: 40px -8px 0;
+  padding: 20px 0 30px;
 
-    .text {
-      font-size: 3em;
-      font-weight: 700;
-      height: 100px;
-      line-height: 2.1em;
-      margin-left: 100px;
-      vertical-align: baseline;
+  .inner {
+    @include outer-container;
+
+    p {
+      @include shift(1);
     }
   }
 }
 
+.header {
+  @include outer-container;
+
+  .logo {
+    .one_col {
+      img {
+        width: 100%;
+      }
+    }
+
+    .text {
+      @include shift(1);
+      font-size: 3.6em;
+      font-weight: 700;
+    }
+  }
+}
+
+.one_col {
+  @include span-columns(1);
+}
+
 .middle {
-  @include span-columns(9);
+  @include outer-container;
+  @include shift(1);
 
   color: #81888D;
   font-size: 2em;
   font-weight: 300;
   line-height: 2em;
-  margin-left: 100px;
   text-align: left;
   text-rendering: optimizelegibility;
 }
