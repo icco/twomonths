@@ -2,24 +2,6 @@ $body-font-size: 1em !default;
 $body-line-height: golden-ratio(1em, 1) !default;
 $body-font-family: $helvetica !default;
 
-$base-border-color: hsl(43, 23%, 90%);
-$base-font-size: 13px;
-
-$background-color: #F9F8F6;
-$highlight-color: hsl(44, 87%, 96%);
-
-$orange: hsl(14, 97%, 55%);
-
-$base-font-color-alt: #8B8880;
-
-$max-width: em(1200);
-
-$desktop-breakpoint: 940px;
-$tablet-breakpoint: 767px;
-$desktop: new-breakpoint($desktop-breakpoint);
-$tablet: new-breakpoint($tablet-breakpoint);
-$mobile: new-breakpoint(max-width $tablet-breakpoint - 1);
-
 body {
   font: $body-font-size $body-font-family;
   line-height: $body-line-height;
@@ -29,62 +11,24 @@ body {
   @include outer-container;
 }
 
-section {
-  aside { @include span-columns(3); }
-  article { @include span-columns(9); }
+.header {
+  .logo {
+    background: url('/img/clock.svg');
+    background-repeat: no-repeat;
+
+    .text {
+      margin-left: 100px;
+      font-weight: 700;
+      font-size: 3em;
+      line-height: 2em;
+      vertical-align: baseline;
+      height: 100px;
+    }
+  }
 }
 
 
-section > article {
-  background: white;
-  border: 1px solid darken($base-border-color, 10%);
-  border-bottom: 1px solid $base-border-color;
-  border-top: 0;
-  padding: 60px 28px;
-  @include transition;
-  $radii: 6px;
-
-  &:first-child {
-    border-radius: $radii $radii 0 0;
-    border-top: 1px solid darken($base-border-color, 10%);
-  }
-
-  &:last-child {
-    border-radius: 0 0 $radii $radii;
-    border-bottom: 1px solid darken($base-border-color, 10%);
-  }
-
-  &:only-child {
-    border-radius: $radii;
-  }
-
-  a.view-source {
-    color: hsl(43, 13%, 75%);
-    float: right;
-    font-size: $base-font-size;
-    margin-top: 5px;
-    padding: 2px 20px;
-    text-shadow: 0 1px 0 white;
-    text-transform: capitalize;
-    @include transition;
-
-    &:hover {
-      background-color: $background-color;
-      border-radius: 20px;
-      color: hsl(43, 13%, 60%);
-    }
-  }
-
-  ul li {
-    margin-bottom: 0.8em;
-
-    ul {
-      margin: 0.3em 0;
-      padding-left: 20px;
-
-      li {
-        margin-bottom: 0.2em;
-      }
-    }
-  }
+section {
+  aside { @include span-columns(3); }
+  article { @include span-columns(9); }
 }
