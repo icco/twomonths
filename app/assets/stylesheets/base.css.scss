@@ -41,11 +41,12 @@ body {
   @include outer-container;
 
   .one_col {
-    embed {
-      path {
-        stroke: $dark-text;
-      }
+    svg {
+      height: 5em;
       width: 100%;
+    }
+    polyline {
+      stroke: $dark-text;
     }
   }
 
