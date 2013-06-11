@@ -1,0 +1,24 @@
+<section>
+  <div class="inner">
+    <% form_tag '/auth/identity/callback' do |f| %>
+      <h1>Login</h1>
+      <%= flash_tag(:notice) %>
+      <%= text_field_tag :auth_key %>
+      <%= password_field_tag :password %>
+      <%= submit_tag 'Login' %>
+    <% end %>
+  </div>
+</section>
+
+<section>
+  <div class="inner">
+    <% form_tag '/auth/identity/register' do |f| %>
+      <h1>Create an Account</h1>
+      <%= flash_tag(:notice) %>
+      <%= text_field_tag :username %>
+      <%= password_field_tag :password %>
+      <%= password_field_tag :password_confirmation %>
+      <%= submit_tag 'Sign Up' %>
+    <% end %>
+  </div>
+</section>

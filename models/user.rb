@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   validates :email, :email => true
 
   def User.find_or_create_from_auth_hash hash
+    p hash.extra.keys
     username = hash["info"]["username"]
     if !username.nil?
       return User.find_or_create_by_username username
