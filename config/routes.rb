@@ -8,4 +8,5 @@ Twomonths::Application.routes.draw do
 
   # Users
   resources :users
+  resources :goals
 end
