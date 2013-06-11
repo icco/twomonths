@@ -4,5 +4,6 @@ rvm:
 before_script:
   - psql -c 'create database twomonths_test;' -U postgres
   - "bundle exec rake db:setup"
+bundler_args: --binstubs=bin/stubs
 notifications:
   email: false
