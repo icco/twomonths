@@ -2,6 +2,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def current_user
+    if session[:user_id].nil?
+      return nil
+    end
+
     return User.find_by_id(session[:user_id])
   end
 
