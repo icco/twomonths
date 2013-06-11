@@ -3,5 +3,9 @@ Twomonths::Application.routes.draw do
 
   # Auth config
   match '/login' => 'sessions#new'
+  match '/logout' => 'sessions#destroy'
   match '/auth/:provider/callback' => 'sessions#create'
+
+  # Users
+  resources :users
 end

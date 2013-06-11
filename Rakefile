@@ -14,5 +14,6 @@ if defined?(RSpec)
 
   task spec: :factory_specs
 end
+
 task(:default).clear
 task :default => [:spec]
