@@ -1,11 +1,11 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
 
   def index
 
   end
 
   def show
-    p params
+    @user = User.find_by_username(params['id'])
   end
 
   def edit
