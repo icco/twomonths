@@ -3,9 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if params['provider'] == :identity
-      p request.env["omniauth.auth"].info["username"]
-    end
+    p params
 
     user = User.find_or_create_from_auth_hash(env["omniauth.auth"])
     self.current_user = user
