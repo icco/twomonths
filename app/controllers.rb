@@ -15,9 +15,9 @@ Twomonths::App.controllers  do
   end
 
   post "/auth/identity/callback" do
-    current_user = User.find_or_create_from_auth_hash(request.env["omniauth.auth"])
+    set_current_user(User.login(params['auth_key'], request['password']))
 
-    if current_user
+    if get_current_user
       redirect "/"
     else
       redirect "/logout"
