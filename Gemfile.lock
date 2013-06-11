@@ -13,10 +13,15 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
+    bcrypt-ruby (3.0.1)
+    bourbon (3.1.7)
+      sass (>= 3.2.0)
+      thor
     builder (3.0.4)
     daemons (1.1.9)
     erubis (2.7.0)
     eventmachine (1.0.3)
+    hashie (2.0.5)
     http_router (0.11.0)
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
@@ -27,6 +32,15 @@ GEM
     mime-types (1.23)
     minitest (5.0.4)
     multi_json (1.7.6)
+    neat (1.3.0)
+      bourbon (>= 2.1)
+      sass (>= 3.2)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
+    omniauth-identity (1.1.0)
+      bcrypt-ruby (~> 3.0)
+      omniauth (~> 1.0)
     padrino (0.11.2)
       padrino-admin (= 0.11.2)
       padrino-cache (= 0.11.2)
@@ -92,8 +106,11 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  bourbon
   erubis (~> 2.7.0)
   minitest
+  neat
+  omniauth-identity
   padrino (>= 0.11)
   pg
   rack-test
