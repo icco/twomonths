@@ -1,7 +1,15 @@
-# Helper methods defined here can be accessed in any controller or view in the application
-
 Twomonths::App.helpers do
-  # def simple_helper_method
-  #  ...
-  # end
+  def current_user
+    return User.find_by_id(session[:user_id])
+  end
+
+  def current_user= user
+    if user.is_a? User
+      session[:user_id] = user.id
+    elsif user.is_a? Integer
+      session[:user_id] = user
+    else
+      session[:user_id] = nil
+    end
+  end
 end
