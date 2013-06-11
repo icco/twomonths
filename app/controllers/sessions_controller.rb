@@ -3,17 +3,26 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.from_omniauth(env["omniauth.auth"])
-    session[:user_id] = user.id
-    redirect_to root_url, notice: "Signed in!"
+    if params['provider'] == :identity
+      p request.env["omniauth.auth"].info["username"]
+    end
+
+    user = User.find_or_create_from_auth_hash(env["omniauth.auth"])
+    self.current_user = user
+
+    if self.current_user
+      redirect_to '/', notice: "Logged in."
+    else
+      destroy
+    end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, notice: "Signed out!"
+    redirect_to '/', notice: "Signed out!"
   end
 
   def failure
-    redirect_to root_url, alert: "Authentication failed, please try again."
+    redirect_to '/', alert: "Authentication failed, please try again."
   end
 end

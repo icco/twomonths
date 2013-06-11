@@ -1,8 +1,7 @@
 Twomonths::Application.routes.draw do
-  match '/' => 'application#index'
+  match '/' => 'home#index'
 
   # Auth config
-  resources :identities
-  match '/login' => redirect('/auth/identity')
+  match '/login' => 'sessions#new'
   match '/auth/:provider/callback' => 'sessions#create'
 end

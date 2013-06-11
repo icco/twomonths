@@ -1,12 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  def index
-
-  end
-
-  protected
-
   def current_user
     return User.find_by_id(session[:user_id])
   end
