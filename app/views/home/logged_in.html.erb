@@ -1,0 +1,17 @@
+<section>
+  <div class="inner">
+    <p>Welcome back <%= @user.username %>!</p>
+  </div>
+</section>
+  
+
+<section class="chunk">
+  <div class="inner">
+    <% @user.goals.each do |goal| %>
+      <div class="goal">
+        <h2>Goal #<%= goal.id %>:</h2>
+        <p><%= goal.description %>
+      </div>
+    <% end %>
+  </div>
+</section>
