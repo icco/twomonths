@@ -1,23 +1,19 @@
 Twomonths::App.controllers  do
-  
-  # get :index, :map => '/foo/bar' do
-  #   session[:foo] = 'bar'
-  #   render 'index'
-  # end
+  layout :applications
 
-  # get :sample, :map => '/sample/url', :provides => [:any, :js] do
-  #   case content_type
-  #     when :js then ...
-  #     else ...
-  # end
+  get :index do
+    render :index
+  end
 
-  # get :foo, :with => :id do
-  #   'Maps to url '/foo/#{params[:id]}''
-  # end
+  get '/stylesheets/:name' do
+    redirect "/css/#{params[:name]}"
+  end
 
-  # get '/example' do
-  #   'Hello world!'
-  # end
-  
+  get '/javascripts/:name' do
+    redirect "/js/#{params[:name]}"
+  end
 
+  get '/images/:name' do
+    redirect "/img/#{params[:name]}"
+  end
 end
