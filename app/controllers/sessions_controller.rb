@@ -3,15 +3,12 @@ class SessionsController < ApplicationController
   end
 
   def create
-    p params
-
-    user = User.find_or_create_from_auth_hash(env["omniauth.auth"])
-    self.current_user = user
+    self.current_user = User.login(params['auth_key'], request['password'])
 
     if self.current_user
       redirect_to '/', notice: "Logged in."
     else
-      destroy
+      failure
     end
   end
 
