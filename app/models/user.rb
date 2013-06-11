@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   validates :username, :uniqueness => true, :presence => true, :format => { :with => /\A[0-9a-zA-Z]+\z/, :message => "Only numbers and letters allowed." }
   validates :email, :email => true, :unless => "email.nil?"
 
+  has_many :goals
+
   def User.login username, password
     identity = Identity.authenticate(username, password)
     if !identity.nil?
