@@ -15,4 +15,10 @@ programming in style.
 
 ## Features
 
- * Notifications
+ * Goal
+   * Metrics
+ * Updates
+   * Postable via txt or email
+ * Reminders / Notifications
+   * Daily progress updates
+   * Responses become updates
