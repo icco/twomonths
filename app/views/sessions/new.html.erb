@@ -1,18 +1,24 @@
-<%= simple_form_for Identity.new, :url => '/auth/identity/callback' do |f| %>
-  <h1>Login</h1>
-  <%# specify :input_html to avoid params nesting %>
-  <%= f.input :username, :input_html => {:name => 'auth_key'} %>
-  <%= f.input :password, :as => 'password', :input_html => {:name => 'password'} %>
-  <button type='submit'>Login</button>
-<% end %>
+<section>
+  <div class="inner">
+    <%= simple_form_for Identity.new, :url => '/auth/identity/callback' do |f| %>
+      <h1>Login</h1>
+      <%# specify :input_html to avoid params nesting %>
+      <%= f.input :username, :input_html => {:name => 'auth_key'} %>
+      <%= f.input :password, :as => 'password', :input_html => {:name => 'password'} %>
+      <button type='submit'>Login</button>
+    <% end %>
+  </div>
+</section>
 
-or
-
-<%= simple_form_for Identity.new, :url => '/auth/identity/register' do |f| %>
-  <h1>Create an Account</h1>
-  <%# specify :input_html to avoid params nesting %>
-  <%= f.input :username, :input_html => {:name => 'username'} %>
-  <%= f.input :password, :as => 'password', :input_html => {:name => 'password'} %>
-  <%= f.input :password_confirmation, :label => "Confirm Password", :as => 'password', :input_html => {:name => 'password_confirmation'} %>
-  <button type='submit'>Sign Up</button>
-<% end %>
+<section>
+  <div class="inner">
+    <%= simple_form_for Identity.new, :url => '/auth/identity/register' do |f| %>
+      <h1>Create an Account</h1>
+      <%# specify :input_html to avoid params nesting %>
+      <%= f.input :username, :input_html => {:name => 'username'} %>
+      <%= f.input :password, :as => 'password', :input_html => {:name => 'password'} %>
+      <%= f.input :password_confirmation, :label => "Confirm Password", :as => 'password', :input_html => {:name => 'password_confirmation'} %>
+      <button type='submit'>Sign Up</button>
+    <% end %>
+  </div>
+</section>
