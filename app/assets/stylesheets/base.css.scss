@@ -24,10 +24,12 @@ body {
 }
 
 #flash {
-  background-color: #FF0;
-  padding: 10px;
-  border-radius: 5px;
-  font-weight: bold;
+  .flash {
+    background-color: #FF0;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+  }
 }
 
 .application {
