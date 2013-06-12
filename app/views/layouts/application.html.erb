@@ -9,6 +9,10 @@
   </head>
   <body class="<%= body_class %>">
     <div class="header">
+      <%= render 'flashes' -%>
+    </div>
+
+    <div class="header">
       <div class="one_col">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 360 360" enable-background="new 0 0 360 360" xml:space="preserve">
           <g>
@@ -19,8 +23,6 @@
       </div>
       <h1 class="text">Two Month Me!</h1>
     </div>
-
-    <%= render 'flashes' -%>
 
     <%= yield %>
 
