@@ -20,8 +20,7 @@ class GoalsController < ApplicationController
       g.save
       redirect_to '/'
     else
-      redirect_to url_for(:controller => 'goals', :action => 'new')
-      render "new", :alert => g.errors
+      render "new", :alerts => g.errors
     end
   end
 
