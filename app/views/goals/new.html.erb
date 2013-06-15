@@ -2,7 +2,8 @@
   <div class="inner">
     <%= simple_form_for Goal.new do |f| %>
       <h1>Add a goal!</h1>
-      <button type='submit'>Login</button>
+      <%= f.input :description %>
+      <%= f.button :submit %>
     <% end %>
   </div>
 </section>
