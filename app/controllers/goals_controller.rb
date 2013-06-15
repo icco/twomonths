@@ -3,6 +3,7 @@ class GoalsController < ApplicationController
   end
 
   def new
+    @user = self.current_user
   end
 
   def create
