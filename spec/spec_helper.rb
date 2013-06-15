@@ -7,6 +7,8 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
 
+require 'capybara/rspec'
+
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
@@ -23,6 +25,9 @@ RSpec.configure do |config|
   config.mock_with :mocha
   # config.mock_with :flexmock
   # config.mock_with :rr
+ 
+  # From https://github.com/thoughtbot/factory_girl/wiki/Usage
+  config.include FactoryGirl::Syntax::Methods
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
@@ -45,3 +50,7 @@ RSpec.configure do |config|
 end
 
 Capybara.javascript_driver = :webkit
+
+class ActiveSupport::TestCase
+  include FactoryGirl::Syntax::Methods
+end
