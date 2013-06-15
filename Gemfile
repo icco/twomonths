@@ -20,6 +20,10 @@ gem 'strong_parameters'
 gem 'thin'
 gem 'twilio-ruby'
 
+group :production do
+  gem 'therubyracer', :require => 'v8'
+end
+
 group :assets do
   gem 'coffee-rails'
   gem 'sass-rails'
