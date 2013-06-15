@@ -1,4 +1,6 @@
 Twomonths::Application.routes.draw do
+
+  # Root
   match '/' => 'home#index'
 
   # Auth config
@@ -9,4 +11,8 @@ Twomonths::Application.routes.draw do
   # Users
   resources :users
   resources :goals
+
+  # Twilio support
+  post "twilio/voice"
+  post "twilio/txt"
 end
