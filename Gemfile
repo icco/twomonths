@@ -18,6 +18,7 @@ gem 'recipient_interceptor'
 gem 'simple_form'
 gem 'strong_parameters'
 gem 'thin'
+gem 'twilio-ruby'
 
 group :assets do
   gem 'coffee-rails'
