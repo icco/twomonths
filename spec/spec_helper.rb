@@ -51,6 +51,9 @@ end
 
 Capybara.javascript_driver = :webkit
 
+# https://github.com/intridea/omniauth/wiki/Integration-Testing
+OmniAuth.config.test_mode = true
+
 class ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods
 end

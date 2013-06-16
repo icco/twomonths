@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
 
   def User.login username, password
     identity = Identity.authenticate(username, password)
-    if !identity.nil?
+
+    if identity
       user = User.find_or_create_by_username username
       p user.errors.messages if !user.valid?
       return user
