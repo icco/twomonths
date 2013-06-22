@@ -5,7 +5,7 @@
       <%# specify :input_html to avoid params nesting %>
       <%= f.input :username, :input_html => {:name => 'auth_key'} %>
       <%= f.input :password, :as => 'password', :input_html => {:name => 'password'} %>
-      <%= f.button :submit %>
+      <%= f.submit 'Login' %>
     <% end %>
   </div>
 </section>
@@ -18,7 +18,7 @@
       <%= f.input :username, :input_html => {:name => 'username'} %>
       <%= f.input :password, :as => 'password', :input_html => {:name => 'password'} %>
       <%= f.input :password_confirmation, :label => "Confirm Password", :as => 'password', :input_html => {:name => 'password_confirmation'} %>
-      <%= f.button :submit %>
+      <%= f.submit 'Create' %>
     <% end %>
   </div>
 </section>
