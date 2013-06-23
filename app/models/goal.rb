@@ -1,6 +1,8 @@
 class Goal < ActiveRecord::Base
-  belongs_to :user
-  validates :description, :presence => true
   attr_accessible :description, :metrics
+
+  belongs_to :user
   has_many :updates
+
+  validates :description, :presence => true
 end

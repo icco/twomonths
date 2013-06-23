@@ -4,6 +4,5 @@ FactoryGirl.define do
   factory :goal do
     description "MyText"
     user_id 1
-    metrics "MyText"
   end
 end
