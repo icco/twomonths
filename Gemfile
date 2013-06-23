@@ -18,7 +18,6 @@ gem 'simple_form'
 gem 'strong_parameters'
 gem 'thin'
 gem 'twilio-ruby'
-gem 'zurb-foundation'
 
 group :production do
   gem 'therubyracer', :require => 'v8'
@@ -28,6 +27,10 @@ group :assets do
   gem 'coffee-rails'
   gem 'sass-rails'
   gem 'uglifier'
+
+  # Add these gems
+  gem 'compass-rails'
+  gem 'zurb-foundation'
 end
 
 group :development do
