@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-
+    404
   end
 
   def show
@@ -9,7 +9,10 @@ class UsersController < ApplicationController
   end
 
   def edit
-
+    @user = User.find_by_username(params['id'])
+    if @user != self.current_user
+      404
+    end
   end
 
   def update
