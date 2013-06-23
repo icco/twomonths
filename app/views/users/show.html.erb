@@ -2,7 +2,7 @@
   <ul>
     <li><a href="<%= url_for :action => 'edit' %>">Edit</a></li>
     <li>User: <%= @user.username %></li>
-    <li>Telephone: <%= @user.telephone.inspect %></li>
+    <li>Telephone: <%= @user.telephone.phony_formatted(:format => :international, :spaces => '-') %></li>
     <li>Email: <%= @user.email.inspect %></li>
   </ul>
 </div>

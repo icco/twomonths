@@ -1,5 +1,6 @@
 <div class="row">
-  <%= simple_form_for @user do |f| %>
+  <%= simple_form_for @user, :url => url_for(:action => 'update') do |f| %>
+    <%= f.input :id, :as => :hidden %>
     <%= f.input :username, disabled: true, hint: 'You cannot change your username.' %>
     <%= f.input :telephone %>
     <%= f.input :email %>

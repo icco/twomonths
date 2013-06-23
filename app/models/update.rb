@@ -8,7 +8,7 @@ class Update < ActiveRecord::Base
     update.content = message
     update.from = number
 
-    user = User.find_by_telephone number
+    user = User.find_by_telephone PhonyRails.normalize_number(number, :default_country_code => 'US')
 
     if user
       update.user = user

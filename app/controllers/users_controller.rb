@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    404
+    not_found
   end
 
   def show
@@ -11,27 +11,41 @@ class UsersController < ApplicationController
   def edit
     @user = User.find_by_username(params['id'])
     if @user != self.current_user
-      404
+      not_found
     end
   end
 
   def update
-    p params
+    @user = User.find_by_username(params['id'])
+    if @user != self.current_user or @user.id != params["user"]["id"].to_i
+      not_found
+    else
+      @user.telephone = params["user"]["telephone"] if !params["user"]["telephone"].empty?
+      @user.email = params["user"]["email"] if !params["user"]["email"].empty?
+
+      if @user.valid?
+        @user.save
+      else
+        p @user.errors
+      end
+
+      redirect_to url_for(:id => self.current_user.username, :controller => 'users', :action => 'show')
+    end
   end
 
   def new
-    404
+    not_found
   end
 
   def create
-    404
+    not_found
   end
 
   def me
     if self.current_user
       redirect_to url_for(:id => self.current_user.username, :controller => 'users', :action => 'show')
     else
-      404
+      not_found
     end
   end
 end
