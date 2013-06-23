@@ -2,7 +2,11 @@
   <ul>
     <li><a href="<%= url_for :action => 'edit' %>">Edit</a></li>
     <li>User: <%= @user.username %></li>
-    <li>Telephone: <%= @user.telephone.phony_formatted(:format => :international, :spaces => '-') %></li>
-    <li>Email: <%= @user.email.inspect %></li>
+    <% if @user.telephone %>
+      <li>Telephone: <%= @user.telephone.phony_formatted(:format => :international, :spaces => '-') %></li>
+    <% end %>
+    <% if @user.email %>
+      <li>Email: <%= @user.email %></li>
+    <% end %>
   </ul>
 </div>
