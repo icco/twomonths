@@ -13,6 +13,13 @@ class TwilioController < ActionController::Base
     message_body = params["Body"]
     from_number = params["From"]
 
-    Update.new_from_sms from_number, message_body
+    status = Update.new_from_sms from_number, message_body
+
+    if status
+      response = Twilio::TwiML::Response.new { }
+      render :text => response.text, :content_type => 'text/xml'
+    else
+      404
+    end
   end
 end
