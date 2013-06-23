@@ -23,4 +23,12 @@ class UsersController < ApplicationController
   def create
     404
   end
+
+  def me
+    if self.current_user
+      redirect_to url_for(:id => self.current_user.username, :controller => 'users', :action => 'show')
+    else
+      404
+    end
+  end
 end

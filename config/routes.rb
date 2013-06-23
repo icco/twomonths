@@ -4,11 +4,12 @@ Twomonths::Application.routes.draw do
   match '/' => 'home#index'
 
   # Auth config
-  match '/login' => 'sessions#new'
-  match '/logout' => 'sessions#destroy'
+  get '/login' => 'sessions#new'
+  get '/logout' => 'sessions#destroy'
   match '/auth/:provider/callback' => 'sessions#create'
 
   # Users
+  get '/user' => 'users#me'
   resources :users
   resources :goals
 
