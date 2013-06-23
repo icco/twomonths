@@ -1,17 +1,16 @@
-<section>
-  <div class="inner">
-    <p>Welcome back <%= @user.username %>!</p>
-  </div>
-</section>
-  
-
-<section class="chunk">
+<div class="row">
   <div class="inner">
     <% @user.goals.each do |goal| %>
       <div class="goal">
-        <h2>Goal #<%= goal.id %>:</h2>
-        <p><%= goal.description %>
+        <h2 class="subheader">Goal #<%= goal.id %>:</h2>
+        <blockquote><%= goal.description %></blockquote>
       </div>
+
+      <ul class="large-block-grid-4">
+        <% goal.updates do |update| %>
+          <li><%= update.content %></li>
+        <% end %>
+      </ul>
     <% end %>
   </div>
-</section>
+</div>
