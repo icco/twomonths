@@ -1,4 +1,4 @@
-<section>
+<div class="row">
   <div class="inner">
     <%= simple_form_for Identity.new, :url => '/auth/identity/callback' do |f| %>
       <h1>Login</h1>
@@ -8,9 +8,9 @@
       <%= f.submit 'Login' %>
     <% end %>
   </div>
-</section>
+</div>
 
-<section>
+<div class="row">
   <div class="inner">
     <%= simple_form_for Identity.new, :url => '/auth/identity/register' do |f| %>
       <h1>Create an Account</h1>
@@ -21,4 +21,4 @@
       <%= f.submit 'Create' %>
     <% end %>
   </div>
-</section>
+</div>
