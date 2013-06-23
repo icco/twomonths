@@ -1,4 +1,4 @@
-class TwilioController < ApplicationController
+class TwilioController < ActionController::Base
   def voice
     # TODO: Save somewhere
     response = Twilio::TwiML::Response.new do |r|
