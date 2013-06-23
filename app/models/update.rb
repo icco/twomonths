@@ -15,6 +15,10 @@ class Update < ActiveRecord::Base
       update.goal = user.current_goal
     end
 
-    update.save
+    if update.save
+      update
+    else
+      nil
+    end
   end
 end
