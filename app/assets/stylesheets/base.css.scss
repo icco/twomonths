@@ -40,7 +40,7 @@ section {
   padding: 20px 0 30px;
 
   .inner {
-    @include outer-container;
+    //@include outer-container;
   }
 }
 
@@ -54,13 +54,13 @@ section {
 
   .inner {
     p {
-      @include shift(1);
+      //@include shift(1);
     }
   }
 }
 
 .header {
-  @include outer-container;
+  // @include outer-container;
 
   .one_col {
     svg {
@@ -73,15 +73,15 @@ section {
   }
 
   .text {
-    @include shift(1);
+    // @include shift(1);
     font-size: 3.6em;
     font-weight: 700;
     line-height: 1rem;
   }
 
   .middle {
-    @include outer-container;
-    @include shift(1);
+    // @include outer-container;
+    // @include shift(1);
 
     font-size: 2em;
     font-weight: 300;
@@ -92,12 +92,12 @@ section {
 }
 
 button, .button, input[type=submit] {
-  @include button(simple, $bg-color3);
+  // @include button(simple, $bg-color3);
 }
 
 .big {
-  @include span-columns(4);
-  @include shift(4);
+  // @include span-columns(4);
+  // @include shift(4);
 
   font-size: 2em;
   padding: 18px;
@@ -105,5 +105,5 @@ button, .button, input[type=submit] {
 }
 
 .one_col {
-  @include span-columns(1);
+  //@include span-columns(1);
 }
