@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
 
   has_many :goals
 
+  def current_goal
+    return self.goals.order("created_at DESC").first
+  end
+
   def User.login username, password
     identity = Identity.authenticate(username, password)
 
