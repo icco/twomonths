@@ -246,7 +246,7 @@ DEPENDENCIES
   pg
   phony_rails
   rack-timeout
-  rails (>= 3.2.11)
+  rails (~> 3.2)
   recipient_interceptor
   rspec-rails
   sass-rails
