@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
   has_many :goals
   has_many :updates
+  has_many :pings
 
   def current_goal
     return self.goals.order("created_at DESC").first

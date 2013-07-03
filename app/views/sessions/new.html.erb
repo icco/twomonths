@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="inner">
+  <div class="large-6 columns">
     <%= simple_form_for Identity.new, :url => '/auth/identity/callback' do |f| %>
       <h1>Login</h1>
       <%# specify :input_html to avoid params nesting %>
@@ -8,10 +8,8 @@
       <%= f.submit 'Login' %>
     <% end %>
   </div>
-</div>
 
-<div class="row">
-  <div class="inner">
+  <div class="large-6 columns">
     <%= simple_form_for Identity.new, :url => '/auth/identity/register' do |f| %>
       <h1>Create an Account</h1>
       <%# specify :input_html to avoid params nesting %>
