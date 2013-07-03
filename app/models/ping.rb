@@ -22,6 +22,8 @@ class Ping < ActiveRecord::Base
     else
       raise NotImplementedError
     end
+
+    self.save
   end
   handle_asynchronously :deliver
 end
