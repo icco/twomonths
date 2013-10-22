@@ -3,7 +3,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    self.current_user = User.login(params['auth_key'], request['password'])
+    username = params['username'] || params['auth_key']
+    self.current_user = User.login(username, request['password'])
 
     if self.current_user
       redirect_to '/', notice: "Logged in."

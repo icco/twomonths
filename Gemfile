@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '1.9.3'
 
+gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 gem 'coffee-rails'
 gem 'delayed_job_active_record', '>= 4.0.0'
