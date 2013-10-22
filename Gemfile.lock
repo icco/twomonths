@@ -181,10 +181,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    strong_parameters (0.1.4)
-      actionpack (>= 3.2.0)
-      activemodel (>= 3.2.0)
-      railties (>= 3.2.0)
     thin (1.6.0)
       daemons (>= 1.0.9)
       eventmachine (>= 1.0.0)
@@ -243,7 +239,6 @@ DEPENDENCIES
   shoulda-matchers
   simple_form
   simplecov
-  strong_parameters
   thin
   timecop
   twilio-ruby
