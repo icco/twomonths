@@ -1,5 +1,6 @@
 class GoalsController < ApplicationController
   def index
+    @user = self.current_user
   end
 
   def new
@@ -7,6 +8,7 @@ class GoalsController < ApplicationController
   end
 
   def create
+    @user = self.current_user
     g = Goal.new
     g.user = self.current_user
 
@@ -25,8 +27,10 @@ class GoalsController < ApplicationController
   end
 
   def show
+    @user = self.current_user
   end
 
   def edit
+    @user = self.current_user
   end
 end

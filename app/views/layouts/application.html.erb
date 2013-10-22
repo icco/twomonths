@@ -31,7 +31,7 @@
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
           <% if @user %>
-            <li><p class="navbar-text pull-right">Signed in as <a href="/logout" class="navbar-link"><%= @user.name %></a></p></li>
+            <li><p class="navbar-text pull-right">Signed in as <a href="/logout" class="navbar-link"><%= @user.username %></a>.</p></li>
           <% else %>
             <li><p class="navbar-text pull-right">Light some fire under some asses.</p></li>
             <li><a href="/login" class="navbar-link">Sign in</a></li>
@@ -39,6 +39,7 @@
         </ul>
       </div><!-- /.navbar-collapse -->
       </nav>
+
       <%= render 'flashes' -%>
 
       <%= yield %>

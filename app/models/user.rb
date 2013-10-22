@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
     identity = Identity.authenticate(username, password)
 
     if identity
-      user = User.find_or_create_by_username username
+      user = User.find_or_create_by(:username => username)
       p user.errors.messages if !user.valid?
       return user
     else
