@@ -15,21 +15,28 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div id="masthead">
-      <hgroup>
-      <h1><a href="/">Two Month Me!</a></h1>
-      </hgroup>
-      <section>
-        <p>Light some fire under some asses.
-        <% if @user %>
-          <a href="/logout" class="tiny button secondary">Logout</a>
-        <% else %>
-          <a href="/login" class="tiny button secondary">Signin</a>
-        <% end %>
-        </p>
-      </section>
-    </div>
+    <nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Two Month Me!</a>
+      <p class="navbar-text">Light some fire under some asses.</p>
 
+      <% if @user %>
+        <p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link"><%= @user.name %></a></p>
+        <a href="/logout" class="tiny button secondary">Logout</a>
+      <% else %>
+        <a href="/login" class="btn btn-default navbar-btn">Sign in</a>
+      <% end %>
+
+
+    </div><!-- /.navbar-collapse -->
+    </nav>
     <%= render 'flashes' -%>
 
     <%= yield %>
