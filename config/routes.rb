@@ -6,7 +6,6 @@ Twomonths::Application.routes.draw do
   # Auth config
   get '/login' => 'sessions#new'
   get '/logout' => 'sessions#destroy'
-  get '/auth/:provider/callback' => 'sessions#create'
   post '/auth/:provider/callback' => 'sessions#create'
 
   # Users
