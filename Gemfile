@@ -2,55 +2,49 @@ source 'https://rubygems.org'
 
 ruby '1.9.3'
 
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0'
 gem 'bourbon'
-gem 'delayed_job_active_record', '>= 4.0.0.beta2'
+gem 'coffee-rails'
+gem 'delayed_job_active_record', '>= 4.0.0'
+gem 'email_validator'
 gem 'flutie'
 gem 'high_voltage'
 gem 'jquery-rails'
+gem 'neat'
 gem 'omniauth-identity'
 gem 'pg'
 gem 'phony_rails'
 gem 'rack-timeout'
-gem 'rails', '~> 3.2'
+gem 'rails', '>= 4.0.0'
 gem 'recipient_interceptor'
+gem 'sass-rails'
 gem 'simple_form'
 gem 'strong_parameters'
 gem 'thin'
 gem 'twilio-ruby'
-
-group :production do
-  gem 'therubyracer', :require => 'v8'
-end
-
-group :assets do
-  gem 'coffee-rails'
-  gem 'sass-rails'
-  gem 'uglifier'
-
-  # Add these gems
-  gem 'compass-rails'
-  gem 'zurb-foundation'
-end
+gem 'uglifier'
 
 group :development do
-  gem 'foreman'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'foreman'
 end
 
 group :development, :test do
   gem 'factory_girl_rails'
-  gem 'rspec-rails'
-  gem 'sham_rack'
+  gem 'rspec-rails', '>= 2.14'
 end
 
 group :test do
-  gem 'bourne', require: false
-  gem 'capybara-webkit', '>= 0.14.1'
+  gem 'capybara-webkit', '>= 1.0.0'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
   gem 'timecop'
+  gem 'webmock'
+end
+
+group :staging, :production do
+  gem 'rails_12factor'
 end
