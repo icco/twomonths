@@ -1,5 +1,4 @@
 class Update < ActiveRecord::Base
-  attr_accessible :content, :from
   belongs_to :goal
   belongs_to :user
 
