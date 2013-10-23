@@ -16,7 +16,9 @@ fi
 [[ ! $(grep 'SECRET_TOKEN=' .env) ]] && echo "SECRET_TOKEN=`bundle exec rake secret`" >> .env
 
 # Pick a port for Foreman
-echo "port: 7000" > .foreman
+if [ ! -f .foreman ]; then
+  echo "port: 7000" > .foreman
+fi
 
 # Set up DNS via Pow
 if [ -d ~/.pow ]

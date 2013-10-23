@@ -9,4 +9,3 @@ development: &default
 test:
   <<: *default
   database: twomonths_test
-  username: postgres
