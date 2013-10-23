@@ -2,7 +2,7 @@
   <div class="inner">
     <%= simple_form_for Goal.new do |f| %>
       <h1>Add a goal!</h1>
-      <%= f.input :description %>
+      <%= f.input :description, wrapper_html: { rows: 6 } %>
       <%= f.button :submit %>
     <% end %>
   </div>
