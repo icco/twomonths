@@ -29,14 +29,14 @@
       </div>
 
       <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
           <% if @user %>
-            <li><p class="navbar-text pull-right">Signed in as <a href="/logout" class="navbar-link"><%= @user.username %></a>.</p></li>
+            <p class="navbar-text pull-right">Signed in as <a href="/logout" class="navbar-link"><%= @user.username %></a>.</p>
           <% else %>
-            <li><p class="navbar-text pull-right">Light some fire under some asses.</p></li>
-            <li><a href="/login" class="navbar-link">Sign in</a></li>
+            <ul class="nav navbar-nav navbar-right">
+              <li><p class="navbar-text pull-right">Light some fire under some asses.</p></li>
+              <li><a href="/login" class="navbar-link">Sign in</a></li>
+            </ul>
           <% end %>
-        </ul>
       </div><!-- /.navbar-collapse -->
       </nav>
 
