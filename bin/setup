@@ -13,6 +13,7 @@ bundle exec rake db:setup
 if [ ! -f .env ]; then
   cp .sample.env .env
 fi
+touch .env
 [[ ! $(grep 'SECRET_TOKEN=' .env) ]] && echo "SECRET_TOKEN=`bundle exec rake secret`" >> .env
 
 # Pick a port for Foreman
