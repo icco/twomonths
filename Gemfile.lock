@@ -216,6 +216,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass!
+  builder
   capybara-webkit (>= 1.0.0)
   coffee-rails
   database_cleaner
