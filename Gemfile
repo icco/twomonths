@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3'
+ruby '2.0.0'
 
 gem "therubyracer", :require => 'v8'
 gem 'bcrypt-ruby', '~> 3.0.0'
