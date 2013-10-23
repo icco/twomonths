@@ -1,4 +1,6 @@
 class GoalsController < ApplicationController
+  before_filter :authenticate
+
   def index
     @user = self.current_user
   end
