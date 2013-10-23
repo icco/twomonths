@@ -4,6 +4,13 @@ class SessionsController < ApplicationController
 
   def create
     username = params['username'] || params['auth_key']
+
+    if request['password_confirmation']
+      if request['password'] != request['password_confirmation']
+        failure
+      end
+    end
+
     self.current_user = User.login(username, request['password'])
 
     if self.current_user
