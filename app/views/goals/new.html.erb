@@ -1,7 +1,15 @@
 <section class="chunk">
   <div class="inner">
     <%= simple_form_for Goal.new do |f| %>
-      <h1>Add a goal!</h1>
+      <h2>Add a goal for the next two months</h2>
+
+      <p>Goals are projects that you expect to take about two months. You should try and specify measurable desirables that you are responsible for.</p>
+
+      <div class="bs-callout bs-callout-info">
+        <h4>Example</h4>
+        <p>Create a new webcomic with eight strips, four characters with biographies, a website and three t-shirt designs.</p>
+      </div>
+
       <%= f.input :description, :html => { :rows => 6 } %>
       <%= f.button :submit %>
     <% end %>
