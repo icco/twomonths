@@ -1,4 +1,11 @@
 class UsersController < ApplicationController
+  def me
+    if self.current_user
+      redirect_to url_for(:id => self.current_user.username, :controller => 'users', :action => 'show')
+    else
+      not_found
+    end
+  end
 
   def index
     not_found
@@ -6,6 +13,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_username(params['id'])
+    not_found if !@user
   end
 
   def edit
@@ -41,15 +49,5 @@ class UsersController < ApplicationController
 
   def create
     not_found
-  end
-
-  def me
-    before_filter :authenticate
-
-    if self.current_user
-      redirect_to url_for(:id => self.current_user.username, :controller => 'users', :action => 'show')
-    else
-      not_found
-    end
   end
 end

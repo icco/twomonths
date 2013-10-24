@@ -9,6 +9,7 @@ Twomonths::Application.routes.draw do
   post '/auth/:provider/callback' => 'sessions#create'
 
   # Users
+  get '/me' => 'users#me'
   get '/user' => 'users#me'
   resources :users
   resources :goals
