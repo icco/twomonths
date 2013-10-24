@@ -14,19 +14,20 @@ class User < ActiveRecord::Base
   end
 
   def User.login username, password
-    identity = Identity.authenticate(username, password)
-    p identity
+    identity = Identity.authenticate({:username => username}, password)
 
-    if identity
-      user = User.where(:username => username)
-      if user.nil? or user.empty?
-        user = User.create(:username => username)
-        user.save
-      end
-
-      return user
-    else
-      return nil
+    if identity.nil?
+      raise "Could not find identity: #{username}"
     end
+
+    user = User.where(:username => username).first
+
+    #p user, identity
+    if user.nil? or !user
+      user = User.create(:username => username)
+      user.save
+    end
+
+    return user
   end
 end

@@ -11,7 +11,12 @@ class SessionsController < ApplicationController
       end
     end
 
-    self.current_user = User.login(username, request['password'])
+    begin
+      @user = User.login(username, request['password'])
+      self.current_user = @user
+    rescue RuntimeError => e
+      p e
+    end
 
     if self.current_user
       redirect_to '/', notice: "Logged in."
