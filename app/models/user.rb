@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
 
   def User.login username, password
     identity = Identity.authenticate(username, password)
+    p identity
 
     if identity
       user = User.where(:username => username)
