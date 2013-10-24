@@ -9,6 +9,8 @@ class UsersController < ApplicationController
   end
 
   def edit
+    before_filter :authenticate
+
     @user = User.find_by_username(params['id'])
     if @user != self.current_user
       not_found
@@ -42,6 +44,8 @@ class UsersController < ApplicationController
   end
 
   def me
+    before_filter :authenticate
+
     if self.current_user
       redirect_to url_for(:id => self.current_user.username, :controller => 'users', :action => 'show')
     else

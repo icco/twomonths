@@ -3,6 +3,7 @@ class GoalsController < ApplicationController
 
   def index
     @user = self.current_user
+    redirect_to '/'
   end
 
   def new
@@ -30,6 +31,7 @@ class GoalsController < ApplicationController
 
   def show
     @user = self.current_user
+    p params
   end
 
   def edit
