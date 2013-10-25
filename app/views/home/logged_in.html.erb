@@ -1,10 +1,27 @@
-<div class="row">
-  <div class="inner">
-    <p>Create a <%= link_to "new goal", new_goal_path() %></a>.</p>
-    <% @user.goals.each do |goal| %>
-      <div class="goal">
-        <h2 class="">Goal #<%= goal.id %>:</h2>
-        <blockquote><%= goal.description %></blockquote>
+<p>Create a <%= link_to "new goal", new_goal_path() %></a>.</p>
+<div>
+  <% @user.goals.each do |goal| %>
+    <div class="goal">
+      <h2 class="">Goal #<%= goal.id %>:</h2>
+      <blockquote><%= goal.description %></blockquote>
+      <div class="row">
+        <div class="panel panel-default col-md-4">
+          <div class="panel-body">
+            <div class="inline"><span class="glyphicon glyphicon-time"></span> <%= goal.start.to_s(:short) %></div>
+            <div class="inline"><span class="glyphicon glyphicon-arrow-right"></span></div>
+            <div class="inline"> <%= goal.end.to_s(:short) %></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <%= simple_form_for goal.new_update do |f| %>
+            <%= f.hidden_field :from, value: "web:#{@user.username}" %>
+            <%= f.input :content, :input_html => { :rows => 5 } %>
+            <%= f.button :submit %>
+          <% end %>
+        </div>
       </div>
 
       <ul class="large-block-grid-4">

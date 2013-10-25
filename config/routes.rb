@@ -13,6 +13,7 @@ Twomonths::Application.routes.draw do
   get '/user' => 'users#me'
   resources :users
   resources :goals
+  resources :updates
 
   # Twilio support
   post "twilio/voice"

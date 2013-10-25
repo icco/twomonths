@@ -5,7 +5,7 @@ class Update < ActiveRecord::Base
   def self.new_from_sms number, message
     update = Update.new
     update.content = message
-    update.from = number
+    update.from = "telephone:#{number}"
 
     user = User.find_by_telephone PhonyRails.normalize_number(number, :default_country_code => 'US')
 
