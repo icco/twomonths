@@ -1,17 +1,27 @@
 <section class="chunk">
-  <div class="inner">
-    <%= simple_form_for Goal.new do |f| %>
-      <h2>Add a goal for the next two months</h2>
+  <%= simple_form_for Goal.new do |f| %>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3" style="text-align: center;">
+        <h2>Add a goal for the next two months</h2>
 
-      <p>Goals are projects that you expect to take about two months. You should try and specify measurable desirables that you are responsible for.</p>
-
-      <div class="bs-callout bs-callout-info">
-        <h4>Example</h4>
-        <p>Create a new webcomic with eight strips, four characters with biographies, a website and three t-shirt designs.</p>
+        <p>Goals are projects that you expect to take about two months. You should try and specify measurable desirables that you are responsible for.</p>
       </div>
+    </div>
 
-      <%= f.input :description, :html => { :rows => 6 } %>
+    <div class="col-md-8">
+      <%= f.input :description, :input_html => { :rows => 8 } %>
       <%= f.button :submit %>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4" style="margin-top: 20px;">
+        <div class="panel panel-info">
+          <div class="panel-heading">Example</div>
+          <div class="panel-body">
+            <p>Create a new webcomic with eight strips, four characters with biographies, a website and three t-shirt designs.</p>
+          </div>
+        </div>
+      </div>
     <% end %>
   </div>
 </section>
