@@ -37,6 +37,9 @@ class ApplicationController < ActionController::Base
 
    # http://guides.rubyonrails.org/layouts_and_rendering.html
    def error(e)
+     logger.error e.message
+     e.backtrace.each { |line| logger.error line }
+
      if e.is_a? ActionController::RoutingError
        render file: Rails.root.join('public', '404.html').to_s, layout: false, status: :not_found
      else

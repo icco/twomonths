@@ -1,12 +1,30 @@
 <div class="row">
   <ul>
-    <li><a href="<%= url_for :action => 'edit' %>">Edit</a></li>
-    <li>User: <%= @user.username %></li>
-    <% if @user.telephone %>
-      <li>Telephone: <%= @user.telephone.phony_formatted(:format => :international, :spaces => '-') %></li>
+    <li>User: <%= @show_user.username %></li>
+
+    <% if @show_user.telephone %>
+      <li>Telephone: <%= @show_user.telephone.phony_formatted(:format => :international, :spaces => '-') %></li>
     <% end %>
-    <% if @user.email %>
-      <li>Email: <%= @user.email %></li>
+
+    <% if @show_user.email %>
+      <li>Email: <%= @show_user.email %></li>
+    <% end %>
+
+    <% if @show_user.eql? @user %>
+      <li><a href="<%= url_for :action => 'edit' %>">Edit</a></li>
+    <% end %>
+
+    <% @show_user.goals.each do |goal| %>
+      <div class="goal">
+        <h4 class="">Goal #<%= goal.id %>:</h4>
+        <blockquote><%= goal.description %></blockquote>
+      </div>
+
+      <ul class="large-block-grid-4">
+        <% goal.updates[0..5].each do |update| %>
+          <li><%= update.content %></li>
+        <% end %>
+      </ul>
     <% end %>
   </ul>
 </div>

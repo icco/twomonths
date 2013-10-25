@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :authenticate, only: [:new, :create, :edit, :save]
+
   def me
     if self.current_user
       redirect_to url_for(:id => self.current_user.username, :controller => 'users', :action => 'show')
@@ -12,13 +14,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by_username(params['id'])
+    @user = self.current_user
+    @show_user = User.find_by_username(params['id'])
     not_found if !@user
   end
 
   def edit
-    before_filter :authenticate
-
     @user = User.find_by_username(params['id'])
     if @user != self.current_user
       not_found
