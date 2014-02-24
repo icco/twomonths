@@ -108,7 +108,7 @@ GEM
       omniauth (~> 1.0)
     pg (0.17.1)
     phony (2.2.2)
-    phony_rails (0.6.0)
+    phony_rails (0.6.1)
       activesupport (>= 3.0)
       countries (>= 0.8.2)
       phony (~> 2.1)
