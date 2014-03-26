@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/thomas-mcdonald/bootstrap-sass.git
-  revision: ce9bba20e3f9d3b4a29cf1302f6178132419987b
+  revision: 1543d853c7fada42e2a327e42792083cd7b3fe2b
   specs:
     bootstrap-sass (3.1.1.0)
       sass (~> 3.2)
@@ -135,7 +135,7 @@ GEM
       activesupport (= 4.0.4)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (10.1.1)
+    rake (10.2.1)
     recipient_interceptor (0.1.2)
       mail
     ref (1.0.5)
