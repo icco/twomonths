@@ -15,9 +15,9 @@ gem 'omniauth-identity'
 gem 'pg'
 gem 'phony_rails'
 gem 'rack-timeout'
-gem 'rails', '>= 4.0.0'
+gem 'rails', '>= 4.2.3'
 gem 'recipient_interceptor'
-gem 'sass-rails', '>= 3.2' # sass-rails needs to be higher than 3.2
+gem 'sass-rails', '>= 5.0.3' # sass-rails needs to be higher than 3.2
 gem 'simple_form'
 gem 'therubyracer', :require => 'v8'
 gem 'thin'
